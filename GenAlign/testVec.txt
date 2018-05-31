@@ -1,0 +1,3 @@
+/Users/wangql/Downloads/26/corpus.modelh.en.vcb //英文index对应词表
+/Users/wangql/Downloads/26/corpus.26.en.vec //英文词向量距离
+/Users/wangql/Downloads/26/corpus.26.en.index.vec //英文词向量index距离

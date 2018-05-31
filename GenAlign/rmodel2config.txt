@@ -1,0 +1,13 @@
+/Users/wangql/Downloads/26/r.corpus.model2.incre.en.vcb //中文index对应词表
+/Users/wangql/Downloads/26/corpus.en //待对齐中文
+/Users/wangql/Downloads/26/r.corpus.model2.incre.en.index //待对齐中文index
+/Users/wangql/Downloads/26/r.corpus.model2.incre.ch.vcb //英文index对应词表
+/Users/wangql/Downloads/26/corpus.ch //待对齐英文
+/Users/wangql/Downloads/26/r.corpus.model2.incre.ch.index //待对齐英文index
+/Users/wangql/Downloads/26/r.corpus.model2.incre.en.vcb //中文index对应词表
+/Users/wangql/Downloads/26/r.corpus.model2.incre.ch.vcb //英文index对应词表
+/Users/wangql/Downloads/26/r.corpus.model2.incre.en.ch.t //model2得到的概率表
+/Users/wangql/Downloads/26/r.corpus.model2.incre.en.ch.a //model2得到的位置对齐概率表
+/Users/wangql/Downloads/26/r.corpus.model2.incre.en.index //待对齐中文index
+/Users/wangql/Downloads/26/r.corpus.model2.incre.ch.index //待对齐英文index
+/Users/wangql/Downloads/26/r.corpus.model2.incre.en.ch.align //对齐结果文件

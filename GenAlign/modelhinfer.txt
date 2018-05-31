@@ -1,0 +1,15 @@
+/Users/wangql/Downloads/26/corpus.modelh.ch.vcb //中文index对应词表
+/Users/wangql/Downloads/26/corpus.ch //待对齐中文
+/Users/wangql/Downloads/26/corpus.modelh.ch.index //待对齐中文index
+/Users/wangql/Downloads/26/corpus.modelh.en.vcb //英文index对应词表
+/Users/wangql/Downloads/26/corpus.en //待对齐英文
+/Users/wangql/Downloads/26/corpus.modelh.en.index //待对齐英文index
+/Users/wangql/Downloads/26/corpus.modelh.ch.vcb //中文index对应词表
+/Users/wangql/Downloads/26/corpus.modelh.en.vcb //英文index对应词表
+/Users/wangql/Downloads/26/corpus.modelh.ch.en.t //modelh得到的概率表
+/Users/wangql/Downloads/26/corpus.modelh.ch.index //待对齐中文index
+/Users/wangql/Downloads/26/corpus.modelh.en.index //待对齐英文index
+/Users/wangql/Downloads/26/corpus.modelh.ch.en.AlCount //modelh得到的AlCount
+/Users/wangql/Downloads/26/corpus.modelh.ch.en.ai //modelh得到的ai
+/Users/wangql/Downloads/26/corpus.modelh.ch.en.bi //modelh得到的bi
+/Users/wangql/Downloads/26/corpus.modelh.ch.en.infer.align //modelh得到的对齐文件

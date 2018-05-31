@@ -1,0 +1,141 @@
+<!doctype html>
+
+<html>
+
+<meta charset="UTF-8">
+<title>Word Alignment</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">NJUWA</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href='/myalign'>compare</a></li>
+                <li><a href={% url 'myalign:interPage' %}>interalign</a></li>
+                <li class="active"><a href="#">batchalign</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<style type="text/css">
+
+    #container {
+        width: 1024px;
+    }
+
+    h1 {
+        font-size: xx-large;
+        font-family: "华文新魏";
+        text-shadow: 2px 2px 4px #bbb;
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    .conleft {
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+</style>
+
+<div class="container">
+
+    <div id="example">
+        <h1>The Word Alignment System</h1>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Please input two sentences:</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <form action="/batchadd/" method="get" class="form-horizontal" style="width: 1000px">
+                        <div class="form-group">
+                            <label for="ch">Chinese：</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="ch" id="ch" cols="140" rows="10"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="en">English：</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="en" id="en" cols="140" rows="10"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-default" id='batchsum'>Go!</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Results</h3>
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">word alignment</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="batchresult"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Results</h3>
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">word cloud</h3>
+                </div>
+                <table>
+                    <tr>
+                        <td><img name="pic_zh" id="pic_zh" border=0></td>
+                        <td><img name="pic_en" id="pic_en" border=0></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#batchsum").click(function () {
+            var ch = $("#ch").val();
+            var en = $("#en").val();
+
+            $.get("batchadd", {'ch': ch, 'en': en}, function (ret) {
+
+                $('#batchresult').html(ret.batchalign);
+                $('#pic_zh').attr('src', ret.pic_zh)
+                $('#pic_en').attr('src', ret.pic_en)
+
+
+            })
+        });
+    });
+</script>
+</html>

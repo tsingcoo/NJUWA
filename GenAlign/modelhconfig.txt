@@ -1,0 +1,15 @@
+/Users/wangql/Windows/incre/16/corpus.h16.ch.vcb //中文index对应词表
+/Users/wangql/Windows/incre/16/corpus.ch //待对齐中文
+/Users/wangql/Windows/incre/16/corpus.h16.ch.index //待对齐中文index
+/Users/wangql/Windows/incre/16/corpus.h16.en.vcb //英文index对应词表
+/Users/wangql/Windows/incre/16/corpus.en //待对齐英文
+/Users/wangql/Windows/incre/16/corpus.h16.en.index //待对齐英文index
+/Users/wangql/Windows/incre/16/corpus.h16.ch.vcb //中文index对应词表
+/Users/wangql/Windows/incre/16/corpus.h16.en.vcb //英文index对应词表
+/Users/wangql/Windows/incre/16/corpus.modelh.h16.ch.en.t //modelh得到的概率表
+/Users/wangql/Windows/incre/16/corpus.h16.ch.index //待对齐中文index
+/Users/wangql/Windows/incre/16/corpus.h16.en.index //待对齐英文index
+/Users/wangql/Windows/incre/16/corpus.modelh.h16.ch.en.AlCount //modelh得到的AlCount
+/Users/wangql/Windows/incre/16/corpus.modelh.h16.ch.en.ai //modelh得到的ai
+/Users/wangql/Windows/incre/16/corpus.modelh.h16.ch.en.bi //modelh得到的bi
+/Users/wangql/Windows/incre/16/corpus.model2.h16.ch.en.align //modelh得到的对齐文件

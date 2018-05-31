@@ -1,0 +1,265 @@
+<!doctype html>
+
+<html>
+
+<meta charset="UTF-8">
+<title>Word Alignment</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="#">NJUWA</a>
+	</div>
+	<div>
+		<ul class="nav navbar-nav">
+			<li ><a href='/myalign'>compare</a></li>
+            <li class="active"><a href="#">interalign</a></li>
+			<li><a href={% url 'myalign:batchPage' %}>batchalign</a></li>
+		</ul>
+	</div>
+	</div>
+</nav>
+
+<style type="text/css">
+
+#container{
+	width: 1024px;
+}
+
+h1
+{
+    font-size:xx-large;
+    font-family:"华文新魏";
+    text-shadow: 2px 2px 4px #bbb;
+    font-size:2.5em;
+    text-align:center;
+}
+
+.conleft{
+word-wrap:break-word;
+word-break:break-all;
+}
+
+</style>
+
+<div class = "container">
+
+
+    <div id = "example" >
+        <h1>The Word Alignment System</h1>
+    </div>
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Please input two sentences:</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <form action="/interadd/" method="get" class="form-horizontal" style="width: 1000px">
+                        <div class="form-group">
+                            <label for="a" >Chinese：</label>
+                            <input type="text" class="form-control" id="a" name="a">
+                        </div>
+                        <div class="form-group">
+                            <label for="a" >English：</label>
+                            <input type="text" class="form-control" id="b" name="b">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-default" id='intersum'>Go!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Chinese</h3>
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">words segmetation</h3>
+                </div>
+                <div  class="panel-body" >
+                    <div id = "ch_words"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">English</h3>
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">words normalization</h3>
+                </div>
+                <div  class="panel-body" >
+                    <div id = "en_words"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Our's results</h3>
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">word alignment</h3>
+                </div>
+                <div  class="panel-body" >
+                    <div id = "result_prior"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Please input two words:</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <form action="/interaddword/" method="get" class="form-horizontal" style="width: 1000px">
+                        <div class="form-group">
+                            <label for="a" >Chinese：</label>
+                            <input type="text" class="form-control" id="aword" name="aword">
+                        </div>
+                        <div class="form-group">
+                            <label for="a" >English：</label>
+                            <input type="text" class="form-control" id="bword" name="bword">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-default" id='intersumword'>Go!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Thank you</h3>
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">word alignment</h3>
+                </div>
+                <div  class="panel-body" >
+                    <div id = "interalign"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Graphical representation</h3>
+        </div>
+        <div class="panel-body">
+            <canvas id="myCanvas" width="1000" height="1000"></canvas>
+        </div>
+    </div>
+
+</div>
+
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $("#intersum").click(function(){
+        var a = $("#a").val();
+        var b = $("#b").val();
+        var arr_a = a.split(" ");
+        var arr_b = b.split(" ");
+
+
+
+        var canvas = document.getElementById("myCanvas");
+        canvas.width = 1000;
+        canvas.height = 1000;
+        var ctx = canvas.getContext("2d");
+        ctx.shadowOffsetX = 2;
+        ctx.shadowOffsetY = 2;
+        ctx.shadowBlur = 2;
+        ctx.shadowColor = '#bbb';
+        ctx.fillStyle = '#333333';
+        ctx.font="25px Arial";
+
+        $.get("interadd",{'a':a,'b':b}, function(ret){
+            // $('#result').html(ret)
+
+            $('#ch_words').text(ret.ch);
+            $('#en_words').text(ret.en);
+            $('#result_prior').text(ret.align_prior);
+
+
+            arr_ch = ret.ch.split(" ")
+
+
+            for(var i = 0; i < arr_ch.length; ++i){
+                ctx.fillText(arr_ch[i], 310, 50+i*25);
+            }
+
+            arr_en = ret.en.split(" ")
+
+
+            for(var i = 0; i < arr_en.length; ++i){
+                ctx.fillText(arr_en[i], 610, 50+i*25);
+            }
+
+
+
+            arr_ret_prior = ret.align_prior.split(" ");
+            for(var i = 0; i < arr_ret_prior.length; ++i){
+
+                var arr_ret_pair_prior = arr_ret_prior[i].split("-");
+                var arr_ret_ch_prior = parseInt(arr_ret_pair_prior[0]);
+                var arr_ret_en_prior = parseInt(arr_ret_pair_prior[1]);
+
+                ctx.moveTo(370, 40+arr_ret_ch_prior*25);
+                ctx.lineTo(610, 40+arr_ret_en_prior*25);
+
+            }
+
+
+            ctx.stroke();
+        })
+      });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+      $("#intersumword").click(function(){
+        var a = $("#aword").val();
+        var b = $("#bword").val();
+
+
+        $.get("interaddword",{'a':a,'b':b}, function(ret){
+
+            $('#interalign').text(ret.hint);
+
+
+        })
+      });
+    });
+</script>
+
+
+</html>
