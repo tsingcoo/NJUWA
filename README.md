@@ -15,6 +15,6 @@ With the standardization of word alignment, an important task for researchers an
 
 - `django (>=2.0)`
 
-- `jieba`
+- `jieba (>=0.39)`
 
-- `nltk`
+- `nltk (>=1.11)`
