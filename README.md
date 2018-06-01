@@ -36,4 +36,4 @@ The implementation is inspired by the following:
 
 Any comments or suggestions are welcome.
 
-Please email [tsingcoo.wang@gmail.com.](tsingcoo.wang@gmail.com)
+Please email [tsingcoo.wang@gmail.com](tsingcoo.wang@gmail.com).
