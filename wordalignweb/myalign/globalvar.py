@@ -119,6 +119,45 @@ def _init():
     lib_global_inter.ReadBackgroundai_(bs13_global_inter)
     lib_global_inter.ReadBackgroundbi_(bs14_global_inter)
 
+    global lib_global_134w
+    lib_global_134w = ctypes.cdll.LoadLibrary("libgenalignpycallloo.so")
+
+    s1_global_134w = "../26491/merged.26.ch.vcb"  # read path
+    s4_global_134w = "../26491/merged.26.en.vcb"  # read path
+    s7_global_134w = "../26491/merged.26.ch.vcb"  # read path
+    s8_global_134w = "../26491/merged.26.en.vcb"  # read path
+    s9_global_134w = "../26491/merged.26.modelh.ch.en.loo.t"  # read path
+    s12_global_134w = "../26491/merged.26.modelh.ch.en.loo.AlCount"  # read path
+    s13_global_134w = "../26491/merged.26.modelh.ch.en.loo.ai"  # read path
+    s14_global_134w = "../26491/merged.26.modelh.ch.en.loo.bi"  # read path
+
+    # s1_global_134w = "/Users/wangql/wordaligntest/corpus.ch.vcb" #read path
+    # s4_global_134w = "/Users/wangql/wordaligntest/corpus.en.vcb" #read path
+    # s7_global_134w = "/Users/wangql/wordaligntest/corpus.ch.vcb" #read path
+    # s8_global_134w = "/Users/wangql/wordaligntest/corpus.en.vcb" #read path
+    # s9_global_134w = "/Users/wangql/wordaligntest/modelh.ch.en.t" #read path
+    # s12_global_134w = "/Users/wangql/wordaligntest/modelh.ch.en.AlCount" #read path
+    # s13_global_134w = "/Users/wangql/wordaligntest/modelh.ch.en.ai" #read path
+    # s14_global_134w = "/Users/wangql/wordaligntest/modelh.ch.en.bi" #read path
+
+    bs1_global_134w = s1_global_134w.encode("utf-8")
+    bs4_global_134w = s4_global_134w.encode("utf-8")
+    bs7_global_134w = s7_global_134w.encode("utf-8")
+    bs8_global_134w = s8_global_134w.encode("utf-8")
+    bs9_global_134w = s9_global_134w.encode("utf-8")
+    bs12_global_134w = s12_global_134w.encode("utf-8")
+    bs13_global_134w = s13_global_134w.encode("utf-8")
+    bs14_global_134w = s14_global_134w.encode("utf-8")
+
+    lib_global_134w.ReadFileCh(bs1_global_134w)
+    lib_global_134w.ReadFileEn(bs4_global_134w)
+    lib_global_134w.ReadMyVcbCh(bs7_global_134w)
+    lib_global_134w.ReadMyVcbEn(bs8_global_134w)
+    lib_global_134w.ReadTTable(bs9_global_134w)
+    lib_global_134w.ConstructAlCount_()
+    lib_global_134w.ReadBackgroundAlCount_(bs12_global_134w)
+    lib_global_134w.ReadBackgroundai_(bs13_global_134w)
+    lib_global_134w.ReadBackgroundbi_(bs14_global_134w)
 
     global en_zh_dict
     en_zh_dict = collections.defaultdict(set)
