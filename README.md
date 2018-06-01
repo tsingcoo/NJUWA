@@ -8,7 +8,6 @@ With the standardization of word alignment, an important task for researchers an
 
 ## Requirements
 
-
 - `c++11`
 
 - `python (>=3.6)`
@@ -18,3 +17,18 @@ With the standardization of word alignment, an important task for researchers an
 - `jieba (>=0.39)`
 
 - `nltk (>=1.11)`
+
+## Acknowledgments
+
+The implementation is inspired by the following:
+
+- [The Mathematics of Statistical Machine Translation: Parameter Estimation](http://www.aclweb.org/anthology/J93-2003)
+
+- [HMM-Based Word Alignment in Statistical Translation](http://www.aclweb.org/anthology/C96-2141)
+
+- [GIZA++: Training of statistical translation models.](http://www.fjoch.com/GIZA++.html)
+
+- [Incremental Training and Intentional Over-fitting of Word Alignment](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/MT-Summit_Alignment.pdf)
+
+- [Leave-one-out Word Alignment without Garbage Collector Effects](https://pdfs.semanticscholar.org/3ad5/aea3a98dbf00eb8800816040dbee88572f72.pdf)
+
