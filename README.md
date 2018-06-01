@@ -9,12 +9,12 @@ With the standardization of word alignment, an important task for researchers an
 ## Requirements
 
 
-c++11
+- `c++11`
 
-python (>=3.6)
+- `python (>=3.6)`
 
-django (>=2.0)
+- `django (>=2.0)`
 
-jieba
+- `jieba`
 
-nltk
+- `nltk`
