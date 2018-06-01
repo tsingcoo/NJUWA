@@ -18,7 +18,7 @@ With the standardization of word alignment, an important task for researchers an
 
 - `nltk (>=1.11)`
 
-## Acknowledgments
+## Acknowledgements
 
 The implementation is inspired by the following:
 
@@ -32,3 +32,8 @@ The implementation is inspired by the following:
 
 - [Leave-one-out Word Alignment without Garbage Collector Effects](https://pdfs.semanticscholar.org/3ad5/aea3a98dbf00eb8800816040dbee88572f72.pdf)
 
+## Contact
+
+Any comments or suggestions are welcome.
+
+Please email [tsingcoo.wang@gmail.com.](tsingcoo.wang@gmail.com)
